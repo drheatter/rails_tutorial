@@ -12,4 +12,6 @@ class CommentsController < ApplicationController
   		params.require(:comment).permit(:author_name, :body)
 	end
 
+	before_action :require_login, except: [:create]
+
 end
